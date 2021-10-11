@@ -33,8 +33,12 @@ namespace Task4
             Console.WriteLine(multiply.ToString());
 
             Polynomial p3 = new Polynomial();
-            p3.Parse("8x^0 + 4x^2");
+            p3 = p * p2;
             Console.WriteLine(p3.ToString());
+
+            double number = 34.2;
+            Polynomial p4 = number;
+            Console.WriteLine(p4.ToString());
             Console.ReadLine();
         }
     }

@@ -10,10 +10,15 @@ namespace Task4
     {
         private SortedDictionary<int, double> polynomials;
 
-
         public Polynomial()
         {
             polynomials = new SortedDictionary<int, double>();
+        }
+
+        public Polynomial(int power, double number)
+        {
+            polynomials = new SortedDictionary<int, double>();
+            polynomials.Add(power, number);
         }
 
         public int GetMaxOrder()
@@ -224,6 +229,26 @@ namespace Task4
 
         }
 
+        public static Polynomial operator+(Polynomial p1, Polynomial p2)
+        {
+            return AddPolynomials(p1, p2);
+        }
+
+        public static Polynomial operator-(Polynomial p1, Polynomial p2)
+        {
+            return SubstractPolynomials(p1, p2);
+        }
+
+        public static Polynomial operator*(Polynomial p1, Polynomial p2)
+        {
+            return MultiplyPolynomial(p1, p2);
+        }
+
+        public static implicit operator Polynomial(double number)
+        { 
+            int power = 0;
+            return new Polynomial(power, number);
+        }
     }
 }
 
